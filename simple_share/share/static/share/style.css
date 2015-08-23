@@ -78,8 +78,12 @@ a:hover {
 }
 
 .file {
-    border-bottom: thin #aaa solid;
+    border-bottom: thin #ccc solid;
     padding: .1em .3em;
+}
+
+.file:last-child {
+    border: none;
 }
 
 /** Upload area **/
