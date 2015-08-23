@@ -1,0 +1,202 @@
+html {
+    margin-top: 0 ;
+    padding: 0;
+    height: 100.0%;
+}
+
+body {
+    margin-top: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Open Sans", "wf_SegoeUILight","wf_SegoeUI","Tahoma","Verdana","Arial","sans-serif";
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: 200;
+    font-size: 1.5em;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+#container {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#header {
+    min-width: 480px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.updown {
+    width: 440px;
+    margin: 10px;
+    padding: 10px;
+    display: block;
+    float: left;
+    font-size: 1.3em;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+#files {
+    max-height: 30em;
+    overflow-y: overlay;
+    word-break: break-word;
+}
+
+.file {
+    border-bottom: thin #aaa solid;
+    padding: .1em .3em;
+}
+
+/** Upload area **/
+
+.upload_message {
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0;
+    color: white;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+#upload_success {
+    background-color: #3a3;
+}
+
+#upload_failure {
+    background-color: #a33;
+}
+
+input[type="submit"].styled {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0;
+    background-color: #33a;
+    color: white;
+    border: 0;
+    font-size: 2.2em;
+    height: 2em;
+}
+
+#ul_l {
+    float: left;
+    width: 370px;
+    margin-right: 4px;
+}
+
+#ul_r {
+    float: left;
+    width: 66px;
+}
+
+/** Upload Button **/
+
+label.styled input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+label.styled {
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0;
+    color: white;
+    height: 2em;
+}
+
+label.styled span {
+    padding: 2px 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: .3em;
+}
+
+label.styled :invalid + span {
+    background-color: #a33;
+}
+label.styled :valid + span {
+    background-color: #3a3;
+}
+
+label.styled:hover :invalid + span {
+    background-color: #b44 !important;
+}
+label.styled:active :invalid + span {
+    background-color: #c55 !important;
+}
+
+label.styled:hover :valid + span {
+    background-color: #4b4 !important;
+}
+label.styled:active :valid + span {
+    background-color: #5c5 !important;
+}
+
+label.styled :invalid + span::after {
+    content: " auswählen...";
+}
+label.styled :valid + span::after {
+    content: " gewählt!";
+}
+
+
+/** Upload Field **/
+
+div.styled {
+    position: relative;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+input[type="text"].styled {
+    width: 100%;
+    height: 2em;
+    display: block;
+    font-size: 1em;
+    padding: 2px 5px;
+    border: 0;
+    font-family: "Open Sans", "wf_SegoeUILight","wf_SegoeUI","Tahoma","Verdana","Arial","sans-serif";
+}

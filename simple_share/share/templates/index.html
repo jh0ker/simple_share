@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'share/style.css' %}">
+    <title>Hello World</title>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Teile deine Datei!</h1>
+    </div>
+    <div id="content">
+        <div id="upload" class="updown">
+            <h2>Datei hochladen</h2>
+            {% if upload %}
+                {% if upload_success %}
+                    <div class="upload_message" id="upload_success">
+                        Hochladen erfolgreich!
+                    </div>
+                {% else %}
+                    <div class="upload_message" id="upload_failure">
+                        Hochladen fehlgeschlagen!
+                    </div>
+                {% endif %}
+            {% endif %}
+            <form action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div id="ul_l">
+                    <label class="styled">
+                        <input type="file" name="upload" required />
+                        <span>Datei</span>
+                    </label>
+                    <div class="styled">
+                        <input type="text" name="note" class="styled" placeholder="Name/Anmerkung" />
+                    </div>
+                </div>
+                <div id="ul_r">
+                    <input type="submit" name="submit" class="styled" value="&#x27a1;" />
+                </div>
+            </form>
+        </div>
+        <div id="download" class="updown">
+            <h2>Dateien herunterladen</h2>
+            <div id="files">
+                {% for f in filelist %}
+                    <div class="file">
+                        <a href="{{ f.path }}">{{ f.name }}</a>
+                        <br/>
+                        <span>{{ f.note }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
