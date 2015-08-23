@@ -21,7 +21,7 @@ def handle_uploaded_file(f, message, ip):
     try:
         dname = hex(int(time() * 10000000)).split('x')[1]
         fname = os.path.join(dname, str(f))
-        
+
         os.makedirs(os.path.join(UPLOAD_LOCATION, dname))
 
         with open(os.path.join(UPLOAD_LOCATION, fname), 'wb+') as destination:
