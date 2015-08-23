@@ -121,6 +121,14 @@ input[type="submit"].styled {
     height: 2em;
 }
 
+input[type="submit"].styled:hover {
+    background-color: #44b;
+}
+
+input[type="submit"].styled:active {
+    background-color: #55c;
+}
+
 #ul_l {
     float: left;
     width: 370px;
