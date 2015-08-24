@@ -39,7 +39,7 @@ def handle_uploaded_file(f, message, ip):
 def get_filelist():
     filelist = File.objects.order_by('-timestamp')
     for f in filelist:
-        f.name = f.path.split(os.path.pathsep)[-1]
+        f.name = f.path.split(os.path.sep)[-1]
         f.path = '/'.join(['static', 'share', 'uploads', f.path])
 
     return filelist
