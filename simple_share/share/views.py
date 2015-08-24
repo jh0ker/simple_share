@@ -3,14 +3,13 @@ from django.shortcuts import render
 from time import time
 from ipware.ip import get_ip
 import os
-from django.conf import settings
 
 from share.models import File
+
 
 UPLOAD_LOCATION = os.path.join('share', 'static', 'share', 'uploads')
 
 def index(request):
-    # return render_to_response('index.html')
     if request.method == 'POST':
         success = handle_uploaded_file(request.FILES['upload'], request.POST['note'], get_ip(request))
         return render(request, 'index.html', {'upload': True, 'upload_success': success, 'filelist': get_filelist()})
@@ -40,7 +39,7 @@ def handle_uploaded_file(f, message, ip):
 def get_filelist():
     filelist = File.objects.order_by('-timestamp')
     for f in filelist:
-        f.name = f.path.split('/')[-1]
+        f.name = f.path.split(os.path.pathsep)[-1]
         f.path = '/'.join(['static', 'share', 'uploads', f.path])
 
     return filelist
