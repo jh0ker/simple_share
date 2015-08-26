@@ -7,7 +7,7 @@ import os
 from share.models import File
 
 
-UPLOAD_LOCATION = os.path.join('share', 'static', 'share', 'uploads')
+UPLOAD_LOCATION = os.path.join('static', 'share', 'uploads')
 
 def index(request):
     if request.method == 'POST':
