@@ -101,3 +101,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
+
+UPLOAD_LOCATION = os.path.join('static', 'share', 'uploads')

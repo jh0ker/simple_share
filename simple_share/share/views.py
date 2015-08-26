@@ -4,10 +4,9 @@ from time import time
 from ipware.ip import get_ip
 import os
 
+from django.conf import settings
+
 from share.models import File
-
-
-UPLOAD_LOCATION = os.path.join('static', 'share', 'uploads')
 
 def index(request):
     if request.method == 'POST':
@@ -21,9 +20,9 @@ def handle_uploaded_file(f, message, ip):
         dname = hex(int(time() * 10000000)).split('x')[1]
         fname = os.path.join(dname, str(f))
 
-        os.makedirs(os.path.join(UPLOAD_LOCATION, dname))
+        os.makedirs(os.path.join(settings.UPLOAD_LOCATION, dname))
 
-        with open(os.path.join(UPLOAD_LOCATION, fname), 'wb+') as destination:
+        with open(os.path.join(settings.UPLOAD_LOCATION, fname), 'wb+') as destination:
             for chunk in f.chunks():
                 destination.write(chunk)
 
