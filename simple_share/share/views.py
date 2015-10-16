@@ -17,7 +17,7 @@ def index(request):
 
 def handle_uploaded_file(f, message, ip):
     try:
-        dname = hex(int(time() * 10000000))[2:]
+        dname = hex(int(time() * 10000000))[2:] 
         fname = os.path.join(dname, str(f))
 
         os.makedirs(os.path.join(settings.UPLOAD_LOCATION, dname))
