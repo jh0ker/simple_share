@@ -15,7 +15,7 @@ def index(request):
     else:
         return render(request, 'index.html', {'upload': False, 'filelist': get_filelist()})
 
-def handle_uploaded_file(f, message, ip):
+def handle_uploaded_file(f, message, ip): 
     try:
         dname = hex(int(time() * 10000000))[2:]
         fname = os.path.join(dname, str(f))
