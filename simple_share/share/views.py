@@ -42,3 +42,4 @@ def get_filelist():
         f.path = '/'.join(['static', 'share', 'uploads', f.path])
 
     return filelist
+
